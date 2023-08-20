@@ -1,8 +1,8 @@
-name: 'Vue to Github Pages'
+name: 'React to Github Pages'
 branding:
   icon: 'activity'  
   color: 'blue'
-description: 'This Action will Build your Vue Project and deploy it to Github Pages'
+description: 'This Action will Build your React Project and deploy it to Github Pages'
 inputs:
   username:
     description: 'Your username'
@@ -36,7 +36,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-      - name: Build Vue
+      - name: Build React
         run: |
               if [ true ==  ${{ inputs.useyarn }} ]; then yarn install --frozen-lockfile; else npm ci; fi
               if [ true ==  ${{ inputs.useyarn }} ]; then yarn build; else npm run build; fi
